@@ -44,6 +44,14 @@ document.addEventListener('DOMContentLoaded', function() {
             requirements: ['calculo1']
         },
         {
+            id: 'algebra-lineal1',
+            name: 'Algebra Lineal 1',
+            semester: 2,
+            completed: false,
+            unlocks: [],
+            requirements: ['algebra', 'geometria-analitica']
+        },
+        {
             id: 'programacion',
             name: 'Programacion',
             semester: 2,
