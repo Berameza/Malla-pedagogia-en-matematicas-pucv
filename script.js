@@ -578,4 +578,30 @@ document.addEventListener('DOMContentLoaded', function() {
         progressFill.style.width = `${percentage}%`;
         progressText.textContent = `${percentage}% completado (${completedCount}/${totalCount} ramos)`;
     }
+    // Toggle theme functionality
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Check for saved theme preference or use preferred color scheme
+const savedTheme = localStorage.getItem('theme') || 
+                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+if (savedTheme === 'dark') {
+    body.setAttribute('data-theme', 'dark');
+    themeToggle.textContent = '☀️ Tema Claro';
+} else {
+    body.removeAttribute('data-theme');
+    themeToggle.textContent = '🌙 Tema Oscuro';
+}
+
+themeToggle.addEventListener('click', () => {
+    if (body.getAttribute('data-theme') === 'dark') {
+        body.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        themeToggle.textContent = '🌙 Tema Oscuro';
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeToggle.textContent = '☀️ Tema Claro';
+    }
 });
