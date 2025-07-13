@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Datos de los cursos
+    // Datos completos de todos los cursos por semestre
     const coursesData = [
         // 1° Semestre
         {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             requirements: []
         },
         
-        // 2° Semestre (corregido según lo indicado)
+        // 2° Semestre
         {
             id: 'calculo2',
             name: 'Calculo 2',
